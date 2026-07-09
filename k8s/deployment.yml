@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: mastermind-sync-api
-          image: mastermind-sync-api:local
+          image: mastermind-sync-api:v2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9000
