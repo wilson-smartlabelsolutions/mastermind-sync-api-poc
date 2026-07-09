@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mastermind-sync-api-service
+  labels:
+    app: mastermind-sync-api-service
+spec:
+  selector:
+    app: mastermind-sync-api
+  ports:
+    - port: 9000
+      targetPort: 9000
+  type: ClusterIP

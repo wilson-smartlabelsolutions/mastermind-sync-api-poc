@@ -1,0 +1,14 @@
+export interface AppConfig {
+  PORT: number;
+  MASTERMIND_SHOPIFY_DOMAIN: string;
+  MASTERMIND_CLIENT_ID: string;
+  MASTERMIND_CLIENT_SECRET: string;
+  MASTERMIND_REDIRECT_URI: string;
+  MASTERMIND_SCOPES: string;
+  MASTERMIND_GRAPHQL_URL: string;
+  PRISMART_PROXY_DOMAIN: string;
+  PRISMART_USERNAME: string;
+  PRISMART_PASSWORD: string;
+  CUSTOMER_STORE_CODE: string;
+  STORE_CODE: string;
+}

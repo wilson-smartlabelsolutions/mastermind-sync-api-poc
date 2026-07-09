@@ -1,0 +1,27 @@
+services:
+  api:
+    image: mastermind-sync-api:latest
+    ports:
+      - '9000:9000'
+    environment:
+      NODE_ENV: production
+      PORT: 9000
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      MASTERMIND_SHOPIFY_DOMAIN: ${MASTERMIND_SHOPIFY_DOMAIN}
+      MASTERMIND_CLIENT_ID: ${MASTERMIND_CLIENT_ID}
+      MASTERMIND_CLIENT_SECRET: ${MASTERMIND_CLIENT_SECRET}
+      MASTERMIND_REDIRECT_URI: ${MASTERMIND_REDIRECT_URI}
+      MASTERMIND_SCOPES: ${MASTERMIND_SCOPES}
+      MASTERMIND_GRAPHQL_URL: ${MASTERMIND_GRAPHQL_URL}
+      PRISMART_PROXY_DOMAIN: ${PRISMART_PROXY_DOMAIN}
+      PRISMART_USERNAME: ${PRISMART_USERNAME}
+      PRISMART_PASSWORD: ${PRISMART_PASSWORD}
+      CUSTOMER_STORE_CODE: ${CUSTOMER_STORE_CODE}
+      STORE_CODE: ${STORE_CODE}
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://localhost:9000/health']
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

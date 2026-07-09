@@ -1,0 +1,10 @@
+packages:
+  - '.'
+
+minimumReleaseAgeExclude:
+  - '@apollo/client@4.2.6'
+
+
+confirmModulesPurge: false
+allowBuilds:
+  esbuild: true
