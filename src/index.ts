@@ -61,7 +61,7 @@ const start = async (): Promise<void> => {
     const config = fastify.config;
     const authorizeUrl = new URL(`${config.MASTERMIND_SHOPIFY_DOMAIN}/admin/oauth/authorize`);
     authorizeUrl.searchParams.set('client_id', config.MASTERMIND_CLIENT_ID);
-    authorizeUrl.searchParams.set('redirect_uri', `${req.host}${config.MASTERMIND_REDIRECT_URI}`);
+    authorizeUrl.searchParams.set('redirect_uri', `https://${req.host}${config.MASTERMIND_REDIRECT_URI}`);
     authorizeUrl.searchParams.set('scope', config.MASTERMIND_SCOPES);
 
     log.info({ url: authorizeUrl.toString() }, 'OAuth authorize URL built');
