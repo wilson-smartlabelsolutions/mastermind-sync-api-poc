@@ -23,9 +23,6 @@ importers:
       graphql:
         specifier: ^17.0.2
         version: 17.0.2
-      pino-pretty:
-        specifier: ^13.1.3
-        version: 13.1.3
     devDependencies:
       '@types/node':
         specifier: ^22.15.21
@@ -33,6 +30,9 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
+      pino-pretty:
+        specifier: ^13.1.3
+        version: 13.1.3
       tsx:
         specifier: ^4.20.3
         version: 4.23.0
